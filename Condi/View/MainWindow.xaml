@@ -1,0 +1,23 @@
+﻿<Window x:Class="Condi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Condi"
+        mc:Ignorable="d"
+        Title="Конди - Главная" Height="450" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Главная" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="newRequestBtn" Content="➕Новая заявка" Margin="30,10" FontSize="16" Grid.Row="1" Click="newRequestBtn_Click"/>
+        <Button x:Name="viewRequestsBtn" Content="📁Реестр заявок" Margin="30,10" FontSize="16" Grid.Row="2" Click="viewRequestsBtn_Click"/>
+        <Button x:Name="manageRequestBtn" Content="🖊️Управление заявками" Margin="30,10" FontSize="16" Grid.Row="3" Click="manageRequestBtn_Click"/>
+        <Button x:Name="employeesManageBtn" Content="👨‍🦰Пользователи" Margin="30,10" FontSize="16" Grid.Row="4" Click="employeesManageBtn_Click"/>
+    </Grid>
+</Window>

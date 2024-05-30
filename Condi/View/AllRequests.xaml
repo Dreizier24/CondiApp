@@ -1,0 +1,40 @@
+﻿<Window x:Class="Condi.View.AllRequests"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Condi.View"
+        mc:Ignorable="d"
+        Title="Конди - Заявки" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="homeBtn" Content="🔙" Margin="5" FontSize="32" Click="homeBtn_Click"  />
+            <Button x:Name="addBtn" Content="Добавить" Margin="5" FontSize="18" Grid.Column="1" Click="addBtn_Click"/>
+            <Button x:Name="editBtn" Content="Изменить" Margin="5" FontSize="18" Grid.Column="2" Click="editBtn_Click"/>
+            <Button x:Name="deleteBtn" Content="Удалить" Margin="5" FontSize="18" Grid.Column="3" Click="deleteBtn_Click"/>
+        </Grid>
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Requests}" SelectedItem="{Binding SelectedRequest}" FontSize="16" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Дата подачи" Binding="{Binding DateAdded}"/>
+                <DataGridTextColumn Header="Модель" Binding="{Binding DeviceModel}"/>
+                <DataGridTextColumn Header="Тип оборудования" Binding="{Binding EquipmentType.TypeTitle}"/>
+                <DataGridTextColumn Header="Описание проблемы" Binding="{Binding ProblemDescription}"/>
+                <DataGridTextColumn Header="ФИО клиента" Binding="{Binding ClientName}"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status.StatusTitle}"/>
+                <DataGridTextColumn Header="Принята пользователем" Binding="{Binding Employee1.Login}"/>
+                <DataGridTextColumn Header="Исполняющий" Binding="{Binding Employee.Login}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        </Grid>
+</Window>
